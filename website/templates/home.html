@@ -40,6 +40,18 @@
             </div>
         </div>
       </article>
+      {% for post in posts %}
+      {% if user == post.author %}
+      <article class="">
+        
+        <div class="">
+          <h2><a class="article-title" href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h2>
+          <p class="article-content">{{ post.content }}</p>
+        </div>
+      </article>
+      {% endif %}
+  {% endfor %}
+
     {% endfor %}
    
     <ul class="pagination justify-content-center">
